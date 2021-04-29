@@ -1,14 +1,31 @@
 <template>
-  <div class="form-content">
-    <form>
+  <div>
+    <form class="form-content">
       <div>
-        <input type="text" name="text" placeholder="Add Item" />
+        <input
+          autocomplete="off"
+          type="text"
+          name="text"
+          placeholder="Add Item"
+        />
       </div>
       <div>
-        <input type="text" name="cost" placeholder="Cost per Unit" />
+        <input
+          autocomplete="off"
+          type="text"
+          name="cost"
+          placeholder="Cost per Unit"
+        />
       </div>
       <div>
-        <input type="number" name="qty" placeholder="Quantity" />
+        <input
+          autocomplete="off"
+          type="number"
+          name="qty"
+          min="1"
+          max="10"
+          placeholder="Quantity"
+        />
       </div>
       <div class="check">
         <label>Coupon?</label>
@@ -23,11 +40,7 @@
 <style scoped>
 .form-content {
   display: flex;
-  max-width: 400px;
-}
-input {
-  padding: 10px 20px;
-  margin-top: 10px;
+  flex-direction: column;
 }
 .check {
   display: flex;
@@ -37,5 +50,6 @@ input {
 .btn {
   display: block;
   width: 100%;
+  cursor: pointer;
 }
 </style>
