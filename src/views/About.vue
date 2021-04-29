@@ -1,3 +1,23 @@
 <template>
-  <h1>This is an about page</h1>
+  <div class="about-container">
+    <h1 class="themed-text">Built By.</h1>
+    <p>Matthew Beckwith</p>
+    <small>kodahScripts | &copy; 2021</small>
+  </div>
 </template>
+
+<style scoped>
+.about-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 220px;
+  font-size: clamp(24px, 10vw, 48px);
+  line-height: 70px;
+}
+.about-container > small {
+  line-height: 13px;
+  font-size: clamp(12px, 2vw, 24px);
+}
+</style>

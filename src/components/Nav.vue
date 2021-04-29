@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h3>{{ title }}</h3>
+      <h1 class="themed-text">{{ title }}</h1>
     </div>
     <div class="links">
       <router-link to="/">Home</router-link> |
