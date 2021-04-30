@@ -2,7 +2,7 @@
   <div class="about-container">
     <h1 class="themed-text">Built By.</h1>
     <p>Matthew Beckwith</p>
-    <small>kodahScripts | &copy; 2021</small>
+    <small>kodahScripts | <b class="sm-txt">&copy;</b>2021</small>
   </div>
 </template>
 
@@ -19,5 +19,8 @@
 .about-container > small {
   line-height: 13px;
   font-size: clamp(12px, 2vw, 24px);
+}
+.sm-txt {
+  font-size: clamp(8px, 2vw, 14px);
 }
 </style>

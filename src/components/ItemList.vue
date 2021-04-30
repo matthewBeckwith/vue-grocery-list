@@ -1,6 +1,14 @@
 <template>
   <div v-if="items && items.length > 0">
-    <Item :key="item.id" v-for="item in items" :item="item" />
+    <Item
+      v-for="item in items"
+      :key="item.id"
+      :item="item"
+      @toggle-discount="$emit('toggle-discount', item.id)"
+      @increase-qty="$emit('increase-qty', item.id)"
+      @decrease-qty="$emit('decrease-qty', item.id)"
+      @delete-item="$emit('delete-item', item.id)"
+    />
   </div>
   <div v-else>
     <h1 class="themed-text">Add An Item</h1>
@@ -12,18 +20,13 @@ import Item from "./Item";
 
 export default {
   name: "ItemList",
-  components: {
-    Item,
-  },
   props: {
     items: Array,
   },
-  emits: ["open-add-item"],
-  methods: {
-    boom() {
-      this.$emit("open-add-item");
-    },
+  components: {
+    Item,
   },
+  emits: ["toggle-discount", "delete-item", "increase-qty", "decrease-qty"],
 };
 </script>
 

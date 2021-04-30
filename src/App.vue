@@ -87,7 +87,7 @@ input[type="checkbox"]:checked {
 
 .themed-text {
   color: #42b883;
-  text-shadow: rgba(204, 204, 204, 0.4) 1px 2px;
+  text-shadow: rgba(204, 204, 204, 0.4) 2px 3px;
 }
 
 @media (min-width: 500px) {
