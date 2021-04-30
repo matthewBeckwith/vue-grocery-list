@@ -2,10 +2,29 @@
   <div :class="[item.disc ? 'item-container disc' : 'item-container']">
     <small class="row">
       <div class="left-col">
+        <span
+          ><i
+            @click="$emit('decrease-qty', item.id)"
+            class="fas fa-chevron-left"
+          ></i
+        ></span>
         <span>{{ item.qty }}</span>
+        <span
+          ><i
+            @click="$emit('increase-qty', item.id)"
+            class="fas fa-chevron-right"
+          ></i
+        ></span>
+      </div>
+      <div class="center-col" @dblclick="$emit('toggle-discount', item.id)">
         <span>{{ item.text }}</span>
       </div>
-      <span class="right-col">{{ item.total }}</span>
+      <div class="right-col">
+        <span>{{ item.total }}</span>
+        <span
+          ><i @click="$emit('delete-item', item.id)" class="fas fa-times"></i
+        ></span>
+      </div>
     </small>
   </div>
 </template>
@@ -25,7 +44,6 @@ export default {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 5px;
-  cursor: pointer;
 }
 .disc {
   border: 1px solid #42b883;
@@ -35,17 +53,28 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 30px;
+  padding: 10px 20px;
   align-items: center;
 }
 .left-col {
+  width: 15%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
-.left-col > span {
-  padding-left: 20px;
+.center-col {
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
 }
 .right-col {
   padding-right: 20px;
+}
+.fas {
+  cursor: pointer;
+}
+.fa-times {
+  padding-left: 20px;
+  color: #850d0d;
 }
 </style>

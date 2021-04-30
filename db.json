@@ -1,36 +1,28 @@
 {
   "items": [
-      {
-        "id": 1,
-        "text": "Milk",
-        "cost": 3.54,
-        "total": 3.54,
-        "qty": 1,
-        "disc": false
-      },
-      {
-        "id": 2,
-        "text": "Bread",
-        "cost": 1.25,
-        "total": 2.5,
-        "qty": 2,
-        "disc": false
-      },
-      {
-        "id": 3,
-        "text": "Razors",
-        "cost": 8.5,
-        "total": 8.5,
-        "qty": 1,
-        "disc": true
-      },
-      {
-        "id": 4,
-        "text": "Cucumber",
-        "cost": 0.5,
-        "total": 1.5,
-        "qty": 3,
-        "disc": false
-      }
-    ]
+    {
+      "id": "Qmi7NT2lM5q",
+      "text": "bannans",
+      "cost": 0.33,
+      "qty": 8,
+      "total": 2.64,
+      "disc": false
+    },
+    {
+      "id": "oiF9kD2dW7O",
+      "text": "Razors",
+      "cost": 8.99,
+      "qty": 2,
+      "total": 17.98,
+      "disc": true
+    },
+    {
+      "id": "Mco8kh8Du2i",
+      "text": "TP",
+      "cost": 10,
+      "qty": 1,
+      "total": 10,
+      "disc": true
+    }
+  ]
 }
