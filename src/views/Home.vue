@@ -18,45 +18,38 @@ export default {
   data() {
     return {
       showAddItem: false,
-      items: [
-        {
-          id: 1,
-          text: "Milk",
-          cost: "3.54",
-          qty: 1,
-          disc: false,
-        },
-        {
-          id: 2,
-          text: "Bread",
-          cost: "1.25",
-          qty: 2,
-          disc: false,
-        },
-        {
-          id: 3,
-          text: "Razors",
-          cost: "8.50",
-          qty: 1,
-          disc: true,
-        },
-        {
-          id: 4,
-          text: "Cucumber",
-          cost: "0.50",
-          qty: 3,
-          disc: false,
-        },
-      ],
+      items: [],
     };
   },
   methods: {
+    // -- Show / Hide Form
     openAddItem() {
       this.showAddItem = true;
     },
     closeAddItem() {
       this.show = false;
     },
+
+    // - Get ALL Items
+    async fetchItems() {
+      const res = await fetch("api/items");
+      const data = await res.json();
+
+      return data;
+    },
+
+    // - Get a Specific Item
+    async fetchItem(id) {
+      const res = await fetch(`api/items/${id}`);
+      const data = await res.json();
+
+      return data;
+    },
+  },
+
+  // - On Create
+  async created() {
+    this.items = await this.fetchItems();
   },
 };
 </script>

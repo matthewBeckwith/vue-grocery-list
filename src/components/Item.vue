@@ -5,7 +5,7 @@
         <span>{{ item.qty }}</span>
         <span>{{ item.text }}</span>
       </div>
-      <span class="right-col">{{ item.cost * item.qty }}</span>
+      <span class="right-col">{{ item.total }}</span>
     </small>
   </div>
 </template>
@@ -25,6 +25,7 @@ export default {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 .disc {
   border: 1px solid #42b883;
