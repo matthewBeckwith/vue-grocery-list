@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="total_txt">{{ total }}</h1>
     <div v-if="showAddItemForm">
       <form @submit="submitAddItemForm" class="form-content">
         <div>
@@ -56,6 +57,9 @@ import Button from "./Button";
 
 export default {
   name: "AddItem",
+  props: {
+    total: String,
+  },
   components: {
     Button,
   },
@@ -122,5 +126,9 @@ export default {
   display: block;
   width: 100%;
   cursor: pointer;
+}
+.total_txt {
+  text-align: center;
+  color: #999;
 }
 </style>

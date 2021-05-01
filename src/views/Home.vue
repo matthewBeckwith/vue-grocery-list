@@ -1,7 +1,10 @@
 <template>
   <div class="main-content">
-    <h1 class="total_txt">{{ total }}</h1>
-    <AddItem @add-item="addItem" class="col" />
+    <AddItem
+      @add-item="addItem"
+      :total="parseFloat(total).toFixed(2)"
+      class="col"
+    />
     <ItemList
       @toggle-discount="toggleDiscount"
       @increase-qty="increaseQty"
@@ -150,7 +153,7 @@ export default {
         newTotal += item.total;
       });
 
-      this.total = newTotal.toFixed(2);
+      this.total = newTotal;
     },
   },
 
@@ -168,9 +171,5 @@ export default {
 }
 .col-wide {
   margin-top: 10px;
-}
-.total_txt {
-  text-align: center;
-  color: #999;
 }
 </style>

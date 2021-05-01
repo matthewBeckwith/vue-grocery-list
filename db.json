@@ -1,3 +1,12 @@
 {
-  "items": []
+  "items": [
+    {
+      "id": "yhA2zo4DF3y",
+      "text": "bam",
+      "cost": 1.25,
+      "qty": 4,
+      "total": 5,
+      "disc": false
+    }
+  ]
 }
