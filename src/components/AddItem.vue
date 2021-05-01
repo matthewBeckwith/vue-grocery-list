@@ -90,7 +90,7 @@ export default {
         text: this.newItem.text,
         cost,
         qty,
-        total,
+        total: total.toFixed(2),
         disc: this.newItem.disc,
       };
       console.log(newItem);
