@@ -1,5 +1,6 @@
 <template>
   <div class="main-content">
+    <h1 class="total_txt">{{ total }}</h1>
     <AddItem @add-item="addItem" class="col" />
     <ItemList
       @toggle-discount="toggleDiscount"
@@ -26,6 +27,7 @@ export default {
     return {
       showAddItem: false,
       items: [],
+      total: 0,
     };
   },
   methods: {
@@ -58,6 +60,7 @@ export default {
       const data = await res.json();
 
       this.items = [...this.items, data];
+      this.getTotal();
     },
 
     // - Update an Item
@@ -100,6 +103,7 @@ export default {
       this.items = this.items.map((item) =>
         item.id === id ? { ...item, qty: data.qty, total: data.total } : item
       );
+      this.getTotal();
     },
 
     // - Decrease the Quantity
@@ -122,6 +126,7 @@ export default {
       this.items = this.items.map((item) =>
         item.id === id ? { ...item, qty: data.qty, total: data.total } : item
       );
+      this.getTotal();
     },
 
     // - Delete an Item
@@ -133,12 +138,26 @@ export default {
       res.status === 200
         ? (this.items = this.items.filter((item) => item.id !== id))
         : alert("Delete ITEM Error");
+
+      this.getTotal();
+    },
+
+    // - Get Grand Total
+    getTotal() {
+      let newTotal = 0;
+
+      this.items.forEach((item) => {
+        newTotal += item.total;
+      });
+
+      this.total = newTotal.toFixed(2);
     },
   },
 
   // - On Create
   async created() {
     this.items = await this.fetchItems();
+    this.getTotal();
   },
 };
 </script>
@@ -149,5 +168,9 @@ export default {
 }
 .col-wide {
   margin-top: 10px;
+}
+.total_txt {
+  text-align: center;
+  color: #999;
 }
 </style>
