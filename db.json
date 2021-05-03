@@ -1,11 +1,35 @@
 {
   "items": [
     {
-      "id": "yhA2zo4DF3y",
-      "text": "bam",
-      "cost": 1.25,
+      "id": "nZF6VB7Bs0h",
+      "text": "socks",
+      "cost": 3.99,
       "qty": 4,
-      "total": 5,
+      "total": "15.96",
+      "disc": false
+    },
+    {
+      "id": "tNx5wn5gb9m",
+      "text": "razor",
+      "cost": 8.99,
+      "qty": 1,
+      "total": "8.99",
+      "disc": true
+    },
+    {
+      "id": "ACA5Az2do3c",
+      "text": "bike",
+      "cost": 120,
+      "qty": 1,
+      "total": "120.00",
+      "disc": false
+    },
+    {
+      "id": "qny0fA0oK1M",
+      "text": "hello",
+      "cost": 1,
+      "qty": 1,
+      "total": "1.00",
       "disc": false
     }
   ]
